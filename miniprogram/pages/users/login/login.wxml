@@ -1,0 +1,15 @@
+<view class="page">
+  <view class="page__bd">
+  
+    <mp-msg type="waiting" size="100" title="用户授权登陆">
+      <view slot="desc"><text class="nickNameText">亲爱的用户</text>，你好，你尚未授权登陆，请点击下方按钮授权系统登陆。😄</view>
+      <view slot="handle">
+          <button class="weui-btn" type="primary" open-type="getUserInfo" bindgetuserinfo="userAuthAction"  >授权登陆</button>
+        </view>
+    </mp-msg>
+  </view>
+
+  <view class="weui-footer">
+      <view class="weui-footer__text">Lovely crafted by 王萌 with ❤ </view>
+  </view>
+</view>

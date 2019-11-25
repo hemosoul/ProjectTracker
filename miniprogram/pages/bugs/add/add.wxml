@@ -1,0 +1,44 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}">
+</mp-toptips>
+
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+
+
+    <mp-form-page title="添加问题详情" subtitle="请详细描述测试中发现的问题，并拍照添加图片，便于问题快速解决！😁。">
+
+      <mp-form id="bugAddForm" rules="{{rules}}" models="{{bugDetail}}">
+        <mp-cells ext-class="my-cells">
+
+          <mp-cell prop="title" title="问题标题" ext-class="">
+            <input bindinput="bindTitleInputChange" data-field="title" class="weui-input" placeholder="请输入标题" />
+          </mp-cell>
+
+          <mp-cell prop="priorLevel" title="优先级" ext-class="">
+            <picker bindchange="bindProirLevelChange" value="{{priorLevelIndex}}" range="{{priorLevel}}">
+              <view class="picker">
+                <text>{{priorLevel[priorLevelIndex]}}</text>
+              </view>
+            </picker>
+          </mp-cell>
+
+          <mp-cell prop="detail" title="问题详情" ext-class="">
+            <textarea bindinput="bindDetailInputChange" class="weui-textarea" ata-field="detail" placeholder="请输入问题详细内容" auto-height="true" style="height: 6em" />
+          </mp-cell>
+
+
+        </mp-cells>
+
+
+      </mp-form>
+
+      <view slot="button">
+        <button class="weui-btn" type="primary" bindtap="addBugAction">保存并提交</button>
+        <button class="weui-btn" type="default" bindtap="addBugDraftAction">保存草稿</button>
+      </view>
+    </mp-form-page>
+
+
+
+  </view>
+</view>

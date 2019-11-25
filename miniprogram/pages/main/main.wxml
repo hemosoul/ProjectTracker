@@ -1,0 +1,5 @@
+<view class="page">
+    <view class="page__bd">
+        <mp-loading type="circle" tips="系统正在疯狂加载中，请稍等。"></mp-loading>
+    </view>
+</view>

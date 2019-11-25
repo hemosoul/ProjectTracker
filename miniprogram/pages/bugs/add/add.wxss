@@ -1,0 +1,4 @@
+@import '../../../style/common.wxss';
+.page{
+  background-color: #aaaaaa
+}

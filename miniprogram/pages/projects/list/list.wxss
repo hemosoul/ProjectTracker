@@ -1,0 +1,12 @@
+@import '../../../style/common.wxss';
+.projectBlock{
+
+  text-align: center;
+  font-size: 20px;
+  margin: 16px 6px;
+  padding:16px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background-color: #CCC;
+  
+}

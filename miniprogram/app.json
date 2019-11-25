@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/users/login/login",
+    "pages/projects/list/list",
+    "pages/projects/home/home",
+    "pages/projects/main/main",
+    "pages/users/home/home",
+    "pages/projects/statistics/statistics",
+    "pages/bugs/add/add",
+    "pages/bugs/detail/detail"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "项目问题跟踪",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/projects/main/main",
+        "text": "全部",
+        "iconPath": "images/icons/briefcase-business-tool.png",
+        "selectedIconPath": "images/icons/briefcase-business-tool-color.png"
+      },
+      {
+        "pagePath": "pages/users/home/home",
+        "text": "我的",
+        "iconPath": "images/icons/snowflake-shape.png",
+        "selectedIconPath": "images/icons/snowflake-shape-color.png"
+      },
+      {
+        "pagePath": "pages/projects/statistics/statistics",
+        "text": "统计",
+        "iconPath": "images/icons/headphones.png",
+        "selectedIconPath": "images/icons/headphones-color.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "downloadFile": 60000
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

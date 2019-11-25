@@ -1,0 +1,27 @@
+@import '../../../style/common.wxss';
+.bugInfo{
+  background-color: #EAEAEA;
+  border-radius: 8rpx;
+  padding:10rpx;
+  font-size:30rpx;
+}
+.bugTitle{
+  text-align: center;
+}
+.bugDetail{
+  font-size:30rpx;
+}
+.bugAppendContent{
+    padding:10rpx;
+    font-size:26rpx;
+    background-color: #f5e3c2;
+    border-radius: 18rpx;
+}
+.bugAppendContentTitle{
+  font-size:30rpx;
+  font-weight: bold;
+}
+.creatorAvatar{
+  width: 50rpx;
+  height: 50rpx;
+}

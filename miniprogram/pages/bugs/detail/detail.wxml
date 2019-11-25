@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__h1 bugTitle">{{bugDetail.title}}</view>
+      <view class="weui-article__section bugInfo">
+         <view>优先级：<text wx:if="{{bugDetail.prior==='高'}}">💥</text>{{bugDetail.prior}}</view>
+         <view>创建时间：{{bugDetail.created}}</view>
+         <view>
+          当前状态：
+          <text wx:if="{{bugDetail.status===2}}"> 🎯待跟进</text>
+          <text wx:elif="{{bugDetail.status===3}}">👌已处理 </text>
+          <text wx:elif="{{bugDetail.status===4}}">✔已关闭 </text>
+          <text wx:elif="{{bugDetail.status===5}}">📙已延期 </text>
+         
+         </view>
+         <view>创建人：{{bugDetail.creatorInfo[0].nickName}}
+         </view>
+      </view>
+     
+      <view class="weui-article__section bugDetail">
+        <view class="weui-article__h3">问题描述：</view>
+        <view class="weui-article__p">{{bugDetail.detail}}</view>
+      </view>
+
+      <view class="weui-article__section bugAppendContent" wx:if="{{bugDetail.appendContent!=''}}">
+        <view class="bugAppendContentTitle">补充说明：</view>
+        <view class="weui-article__p">{{bugDetail.appendContent}}</view>
+      </view>
+
+      <view class="weui-article__section">
+        <view class="weui-article__h2">问题截图：</view>
+        <view class="weui-article__p">{{bugDetail.detail}}</view>
+      </view>
+    </view>
+    <button class="weui-btn" type="primary" bindtap="">回复</button>
+    <view wx:if="{{bugDetail.userOpenID===currentUser.openID}}">
+       <button class="weui-btn" type="default" bindtap="showActionSheet">更多操作</button>
+       <mp-actionsheet bindactiontap="actionSheetClick" show="{{showActionsheet}}" actions="{{actionSheetList}}" title="请选择操作选项">
+</mp-actionsheet>
+    </view>
+   
+
+  </view>
+</view>

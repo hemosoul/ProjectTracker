@@ -1,0 +1,5 @@
+@import '../../../style/common.wxss';
+.projectUserAvatar{
+  width: 50rpx;
+  height: 50rpx;
+}
