@@ -36,6 +36,32 @@ Page({
         type: 'warn',
         value: "补充说明"
       }
+    ],
+    showFollowerActionSheet:false,
+    actionSheetFollowerList:[
+      {
+        text: '🏓变更状态',
+        value: "变更状态"
+      },
+    ],
+    statusActionSheet: false,
+    actionSheetstatusList: [
+      {
+        text: '🎯待跟进',
+        value: 2
+      },
+      {
+        text: '👌已处理',
+        value: 3
+      },
+      {
+        text: '👍已关闭',
+        value: 4
+      },
+      {
+        text: '📙已延期',
+        value: 5
+      },
     ]
 
 
@@ -210,6 +236,59 @@ Page({
       showActionsheet: true
     })
   },
+
+  showFollowerActionSheet: function () {
+    console.log('1')
+    this.setData({
+      'showFollowerActionSheet': true
+    })
+  },
+  //跟进人actionSheet分发
+  actionSheetFolloweClick: function (e) {
+
+    switch (e.detail.value) {
+  
+      case "变更状态":
+        this.showStatusActionSheet()
+        break;
+      default:
+
+    }
+  },
+  actionSheetStatusClick:function(e){
+    console.log(e)
+    var me = this
+    var bugID = this.options.bugID
+    wx.showLoading({
+      title: '系统保存中·····',
+    })
+    
+    wx.cloud.callFunction({
+      name: 'bugStatusChange',
+      data: {
+        'bugID': bugID,
+        'status': e.detail.value
+      },
+
+      success: function (res) {
+        me.setData({
+          'statusActionSheet': false
+        })
+        wx.hideLoading()
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        })
+        me.onShow()
+        
+
+        console.log(res)
+
+      }
+    })
+  },
+
   //actionSheet分发
   actionSheetClick: function(e) {
 
@@ -224,9 +303,20 @@ Page({
       case "补充说明":
         this.navToAppendContentAdd()
         break;
+      case "变更状态":
+        this.showStatusActionSheet()
+        break;
       default:
 
     }
+  },
+  
+  showStatusActionSheet:function(){
+    this.setData({
+      showActionsheet: false,
+      showFollowerActionSheet: false,
+      statusActionSheet: true
+    })
   },
 
   closeBugAction: function() {

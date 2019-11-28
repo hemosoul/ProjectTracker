@@ -84,15 +84,35 @@
         </view>
         <button class="weui-btn" type="primary" bindtap="addBugComment">回复</button>
         <button class="weui-btn" type="default" bindtap="followBugAction" wx:if="{{!currentUserIsFollower}}">跟进问题</button>
-        <button class="weui-btn" type="warn" bindtap="" wx:if="{{currentUserIsFollower}}">跟进人的菜单</button>
+        
 
       </view>
     </view>
 
     <view wx:if="{{bugDetail.userOpenID===currentUser.openID}}">
-      <button class="weui-btn" type="default" bindtap="showActionSheet">更多操作</button>
-      <mp-actionsheet bindactiontap="actionSheetClick" show="{{showActionsheet}}" actions="{{actionSheetList}}" title="请选择操作选项">
+     
+      <button class="weui-btn" type="default"  bindtap="showActionSheet">发起人菜单</button>
+      <button class="weui-btn" type="default"  bindtap="showFollowerActionSheet" wx:if="{{currentUserIsFollower}}">跟进人菜单</button>
+      <mp-actionsheet 
+        bindactiontap="actionSheetClick" 
+        show="{{showActionsheet}}" 
+        actions="{{actionSheetList}}" 
+        title="发起人菜单">
       </mp-actionsheet>
+      <mp-actionsheet 
+        bindactiontap="actionSheetFolloweClick" 
+        show="{{showFollowerActionSheet}}" 
+        actions="{{actionSheetFollowerList}}" 
+        title="跟进人菜单">
+      </mp-actionsheet>
+
+      <mp-actionsheet 
+        bindactiontap="actionSheetStatusClick" 
+        show="{{statusActionSheet}}" 
+        actions="{{actionSheetstatusList}}" 
+        title="选定状态">
+      </mp-actionsheet>
+
     </view>
 
 
