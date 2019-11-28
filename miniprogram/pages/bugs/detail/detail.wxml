@@ -3,20 +3,37 @@
     <view class="weui-article">
       <view class="weui-article__h1 bugTitle">{{bugDetail.title}}</view>
       <view class="weui-article__section bugInfo">
-         <view>优先级：<text wx:if="{{bugDetail.prior==='高'}}">💥</text>{{bugDetail.prior}}</view>
-         <view>创建时间：{{bugDetail.created}}</view>
-         <view>
+        <view>优先级：
+          <text wx:if="{{bugDetail.prior==='高'}}">💥</text>
+          <text wx:if="{{bugDetail.prior==='中'}}">🍄</text>
+          <text wx:if="{{bugDetail.prior==='低'}}">⚽</text>
+          {{bugDetail.prior}}</view>
+        <view>创建时间：{{bugDetail.created}}</view>
+        <view>
           当前状态：
           <text wx:if="{{bugDetail.status===2}}"> 🎯待跟进</text>
           <text wx:elif="{{bugDetail.status===3}}">👌已处理 </text>
-          <text wx:elif="{{bugDetail.status===4}}">✔已关闭 </text>
+          <text wx:elif="{{bugDetail.status===4}}">👍已关闭 </text>
           <text wx:elif="{{bugDetail.status===5}}">📙已延期 </text>
-         
-         </view>
-         <view>创建人：{{bugDetail.creatorInfo[0].nickName}}
-         </view>
+
+        </view>
+        <view>
+            创建人：{{bugDetail.creatorInfo[0].nickName}}
+        </view>
+        <view>
+            <view>跟进人：</view>
+            <view>
+              <image 
+                class="bugFollowersAvatar" 
+                src="{{item.followerInfo[0].avatarUrl}}"
+                wx:for="{{bugFollowerList}}" 
+                wx:key="key" >
+              </image>
+            </view>
+             
+        </view>
       </view>
-     
+
       <view class="weui-article__section bugDetail">
         <view class="weui-article__h3">问题描述：</view>
         <view class="weui-article__p">{{bugDetail.detail}}</view>
@@ -28,17 +45,56 @@
       </view>
 
       <view class="weui-article__section">
-        <view class="weui-article__h2">问题截图：</view>
-        <view class="weui-article__p">{{bugDetail.detail}}</view>
+        <view class="bugImagListTitle">问题截图：</view>
+        <view class="bugImagListArea">
+          <image src="{{item.fileID}}" wx:for="{{bugImagList}}" wx:key="key" mode="aspectFit" data-src="{{item.fileID}}" bindtap="showBigImage">
+            >
+          </image>
+        </view>
+      </view>
+      <view class="weui-article__section">
+        <view class="commentListTitle">回复列表：</view>
+        <view class="commentListArea">
+          <block wx:for="{{bugCommentList}}" wx:key="key">
+            <view class="commentBlock">
+              <view class="commenterAvatar">
+                <image src="{{item.commentorInfo[0].avatarUrl}}"
+                        mode="aspectFit"
+                >
+          
+                </image>
+              </view>
+              <view class="commentBody">
+                <view class="commentInfoArea">{{item.commentorInfo[0].nickName}}/{{item.created}}</view>
+                <view>{{item.content}}</view>
+
+              </view>
+              <view style="clear:both;"></view>
+
+            </view>
+
+          </block>
+
+        </view>
+      </view>
+      <view class="weui-article__section">
+        <view class="commentAddTitle">添加回复：</view>
+        <view class="commentAddTextArea">
+          <textarea bindinput="bindCommentInputChange" class="weui-textarea" value="{{currentBugComment.content}}" placeholder="输入内容" style="height: 3em" />
+        </view>
+        <button class="weui-btn" type="primary" bindtap="addBugComment">回复</button>
+        <button class="weui-btn" type="default" bindtap="followBugAction" wx:if="{{!currentUserIsFollower}}">跟进问题</button>
+        <button class="weui-btn" type="warn" bindtap="" wx:if="{{currentUserIsFollower}}">跟进人的菜单</button>
+
       </view>
     </view>
-    <button class="weui-btn" type="primary" bindtap="">回复</button>
+
     <view wx:if="{{bugDetail.userOpenID===currentUser.openID}}">
-       <button class="weui-btn" type="default" bindtap="showActionSheet">更多操作</button>
-       <mp-actionsheet bindactiontap="actionSheetClick" show="{{showActionsheet}}" actions="{{actionSheetList}}" title="请选择操作选项">
-</mp-actionsheet>
+      <button class="weui-btn" type="default" bindtap="showActionSheet">更多操作</button>
+      <mp-actionsheet bindactiontap="actionSheetClick" show="{{showActionsheet}}" actions="{{actionSheetList}}" title="请选择操作选项">
+      </mp-actionsheet>
     </view>
-   
+
 
   </view>
 </view>

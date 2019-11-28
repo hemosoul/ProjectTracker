@@ -16,16 +16,20 @@ exports.main = async (event, context) => {
   result = await db.collection('bugs').where({
     '_id': bugID
   }).
-    update({
-      data: {
-
-      }
-    })
-
+  update({
+    data: {
+      status:4
+    }
+  })
+  if (result.errMsg === "collection.update:ok" || result.stats.updated===1){
+    status=true
+  }else{
+    errMsg="更新出错！"
+  }
   return {
-    event,
-    openid: wxContext.OPENID,
-    appid: wxContext.APPID,
-    unionid: wxContext.UNIONID,
+    'status':status,
+    'errMsg': errMsg,
+    'result': result,
+    'debug':''
   }
 }

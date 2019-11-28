@@ -1,0 +1,26 @@
+@import '../../../style/common.wxss';
+.bugTitle{
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.bugDetail{
+  padding:20rpx;
+  font-size: 28rpx;
+  margin-bottom: 0.8em;
+}
+
+.appendContentAddTitle{
+  margin:20rpx;
+  font-size:25rpx;
+  font-weight: bold;
+}
+.appendContentTextArea{
+  margin:20rpx;
+  font-size:26rpx;
+  padding:20rpx 50rpx;
+  border-radius: 20rpx;
+  background-color: #EEE;
+  border:1rpx solid #ccc;
+  margin-bottom: 1em;
+}

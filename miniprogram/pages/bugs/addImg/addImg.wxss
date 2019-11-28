@@ -1,0 +1,11 @@
+@import '../../../style/common.wxss';
+.bugTitle{
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.bugDetail{
+  padding:20rpx;
+  font-size: 28rpx;
+  margin-bottom: 0.8em;
+}

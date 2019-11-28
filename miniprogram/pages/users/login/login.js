@@ -14,7 +14,7 @@ Page({
           if (res.result.status) {
 
             wx.redirectTo({
-              url: '/pages/projects/list/list',
+              url: '/pages/main/main',
             })
 
           } else {

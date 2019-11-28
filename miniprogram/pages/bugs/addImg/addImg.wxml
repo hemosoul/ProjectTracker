@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="bugTitle">{{bugDetail.title}}</view>
+    <view class="bugDetail">{{bugDetail.detail}}</view>
+    <mp-cells>
+      <mp-cell>
+        <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectBugImg}}" upload="{{addBugImg}}"  files="{{}}" max-count="5" title="图片上传" tips="图片上传提示"></mp-uploader>
+      </mp-cell>
+    </mp-cells>
+     <button class="weui-btn" type="primary" bindtap="">保存返回</button>
+  </view>
+</view>

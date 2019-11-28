@@ -14,7 +14,7 @@ exports.main = async (event, context) => {
 
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
-  result = await db.collection('projects').where({ 'isPublic': true, }).get()
+  result = await db.collection('projects').get()
   if (result.data.length > 0) {
     status=true;
     projectList = result.data

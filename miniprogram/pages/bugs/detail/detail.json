@@ -1,5 +1,7 @@
 {
   "usingComponents": {
+    "mp-cells": "../components/cells/cells",
+    "mp-cell": "../components/cell/cell",
     "mp-actionsheet": "../../components/actionsheet/actionsheet"
   },
   "navigationBarTitleText": "问题详情"

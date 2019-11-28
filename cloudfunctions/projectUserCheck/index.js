@@ -16,7 +16,7 @@ exports.main = async (event, context) => {
 
   result= await db.collection('projectUsers').where({
     'projectID': event.projectID,
-    'userOpenID': wxContext.OPENID
+    'userOpenID': event.userOpenID
   }).get()
 
   if (result.errMsg ==="collection.get:ok"){
@@ -47,7 +47,8 @@ exports.main = async (event, context) => {
     'errMsg': errMsg,
     'resultCode': resultCode,
     'resultCodeText': resultCodeText,
-    'result': result
+    'result': result,
+    'debug': event
   }
 
 

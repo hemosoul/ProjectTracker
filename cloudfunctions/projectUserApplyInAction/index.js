@@ -19,7 +19,8 @@ exports.main = async (event, context) => {
     name: 'projectUserCheck',
     // 传递给云函数的参数
     data: {
-      projectID: event.projectID,
+      'projectID': event.projectID,
+      'userOpenID': wxContext.OPENID
     }
   })
   if (checkRes.result.status===true){

@@ -13,7 +13,7 @@ Page({
         name: 'title',
         rules: [
           { required: true, message: '问题标题必填' },
-          { maxlength: 12, message: '不得超过是12个字符'}
+          { maxlength: 20, message: '不得超过20个字符'}
         ],
       }, 
       {
@@ -113,7 +113,8 @@ Page({
   bindProirLevelChange:function(e){
     console.log(this)
     this.setData({
-      ['bugDetail.prior']: this.data.priorLevel[e.detail.value]
+      ['bugDetail.prior']: this.data.priorLevel[e.detail.value],
+      'priorLevelIndex': e.detail.value
     })
 
   },

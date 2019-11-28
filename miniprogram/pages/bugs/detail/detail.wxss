@@ -5,6 +5,10 @@
   padding:10rpx;
   font-size:30rpx;
 }
+.bugFollowersAvatar{
+  width: 50rpx;
+  height: 50rpx;
+}
 .bugTitle{
   text-align: center;
 }
@@ -13,13 +17,68 @@
 }
 .bugAppendContent{
     padding:10rpx;
-    font-size:26rpx;
+    font-size:20rpx;
     background-color: #f5e3c2;
     border-radius: 18rpx;
 }
 .bugAppendContentTitle{
-  font-size:30rpx;
+  font-size:24rpx;
   font-weight: bold;
+}
+.bugImagListTitle{
+  font-size:24rpx;
+  font-weight: bold;
+}
+.bugImagListArea image{
+  width:200rpx;
+  height:200rpx;
+  margin:10rpx;
+
+}
+.commentListTitle{
+  font-size:25rpx;
+  font-weight: bold;
+  margin-bottom: 1em;
+
+}
+.commentBlock{
+  display: block;
+  font-size:26rpx;
+  margin-bottom: 20rpx;
+}
+.commenterAvatar image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  float: left;
+  margin-right: 1em;
+}
+.commentBody{
+  float:left;
+  width: 70%;
+  background-color: #eee;
+  padding:20rpx;
+}
+.commentInfoArea{
+  font-size:20rpx;
+  color:#888;
+  border-bottom: 1rpx solid #CCC;
+  margin-bottom:10rpx;
+}
+
+
+
+.commentAddTitle{
+  font-size:25rpx;
+  font-weight: bold;
+}
+.commentAddTextArea{
+  font-size:26rpx;
+  padding:20rpx 50rpx;
+  border-radius: 20rpx;
+  background-color: #EEE;
+  border:1rpx solid #ccc;
+  margin-bottom: 1em;
 }
 .creatorAvatar{
   width: 50rpx;

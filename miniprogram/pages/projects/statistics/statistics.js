@@ -1,10 +1,11 @@
-// miniprogram/pages/projects/statistics/statistics.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    statsData:{}
 
   },
 
@@ -26,7 +27,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var me =this
 
+    console.log(app)
+    wx.cloud.callFunction({
+      name: 'projectStats',
+      data: {
+        'projectID': app.globalData.currentProject._id
+      },
+      success: function (res) {
+
+        if (res.result.status) {
+          me.setData({
+            statsData: res.result.result.list
+          })
+        
+          
+
+        } else {
+
+
+
+        }
+      },
+      fail: console.error
+    })
   },
 
   /**

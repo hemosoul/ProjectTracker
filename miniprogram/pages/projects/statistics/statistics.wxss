@@ -1,1 +1,44 @@
-/* miniprogram/pages/projects/statistics/statistics.wxss */
+@import '../../../style/common.wxss';
+
+.statsCell {
+  width: 220rpx;
+  height: 200rpx;
+  float: left;
+  padding: 30rpx;
+  margin: 40rpx;
+  background-color: #eee;
+  border-radius: 20rpx;
+}
+
+.statsCellTitle {
+  font-size: 30rpx;
+  width: 300rpx;
+}
+
+.statsCellContent {
+  line-height: 150rpx;
+  display:table-cell;
+}
+
+.statsCellNumber {
+  font-size: 100rpx;
+  font-weight: bolder;
+  float: left;
+  line-height: 150rpx;
+  height: 150rpx;
+  margin-left: 60rpx;
+  vertical-align: text-bottom;
+  
+}
+
+.statsCellNumberUnit {
+  
+  font-size: 30rpx;
+  font-weight: bold;
+  float: left;
+  margin-left: 10rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  vertical-align: text-bottom;
+  position: relative
+}

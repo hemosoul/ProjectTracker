@@ -29,12 +29,14 @@ Page({
           wx.setNavigationBarTitle({
             title: "【" + res.result.projectDetail.projectName + "】首页"
           })
-          console.log();
+          console.log(app.globalData);
           //更具项目详细信息检查当前用户访问权限
+
           wx.cloud.callFunction({
             name: 'projectUserCheck',
             data: {
-              projectID: res.result.projectDetail._id
+              'projectID': res.result.projectDetail._id,
+              'userOpenID': app.globalData.currentUser.openID
             },
             success: function (res) {
               me.setData({

@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="page__bd">
+    <mp-searchbar search="{{searchBugList}}" placeholder="搜索内容"></mp-searchbar>
+
+    <mp-cells title="我提交的问题明细" footer="点击查看可查看详情！">
+    <view wx:for="{{bugList}}" wx:key="key">
+      <mp-cell 
+          link 
+          url="/pages/bugs/detail/detail?bugID={{item.bugID}}"  
+          value="{{item.bugInfo[0].title}}({{item.bugInfo[0].prior}})" 
+          footer="查看"   >
+        <view wx:if="{{item.bugInfo[0].status === 2}}" slot="icon">🎯</view>
+        <view wx:elif="{{item.bugInfo[0].status === 3}}" slot="icon">👌</view>
+        <view wx:elif="{{item.bugInfo[0].status === 4}}" slot="icon">👍</view>
+        <view wx:elif="{{item.bugInfo[0].status === 5}}" slot="icon">📙</view>
+      </mp-cell>
+    
+    
+    
+    </view>
+      
+
+    </mp-cells>
+
+  </view>
+</view>

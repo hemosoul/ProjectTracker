@@ -8,7 +8,11 @@
     "pages/users/home/home",
     "pages/projects/statistics/statistics",
     "pages/bugs/add/add",
-    "pages/bugs/detail/detail"
+    "pages/bugs/detail/detail",
+    "pages/bugs/addImg/addImg",
+    "pages/bugs/mybugs/mybugs",
+    "pages/bugs/updateAppendContent/updateAppendContent",
+    "pages/bugs/followerBugList/followerBugList"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -26,10 +30,16 @@
         "selectedIconPath": "images/icons/briefcase-business-tool-color.png"
       },
       {
-        "pagePath": "pages/users/home/home",
-        "text": "我的",
+        "pagePath": "pages/bugs/mybugs/mybugs",
+        "text": "我提交的",
         "iconPath": "images/icons/snowflake-shape.png",
         "selectedIconPath": "images/icons/snowflake-shape-color.png"
+      },
+      {
+        "pagePath": "pages/bugs/followerBugList/followerBugList",
+        "text": "我跟进的",
+        "iconPath": "images/icons/home-interface-button-symbol.png",
+        "selectedIconPath": "images/icons/home-interface-button-symbol-color.png"
       },
       {
         "pagePath": "pages/projects/statistics/statistics",

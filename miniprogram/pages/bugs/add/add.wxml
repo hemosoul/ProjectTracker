@@ -23,7 +23,7 @@
           </mp-cell>
 
           <mp-cell prop="detail" title="问题详情" ext-class="">
-            <textarea bindinput="bindDetailInputChange" class="weui-textarea" ata-field="detail" placeholder="请输入问题详细内容" auto-height="true" style="height: 6em" />
+            <textarea bindinput="bindDetailInputChange" class="weui-textarea" data-field="detail" placeholder="请输入问题详细内容" auto-height="true" style="height: 6em" />
           </mp-cell>
 
 
