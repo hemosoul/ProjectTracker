@@ -29,6 +29,17 @@
 | status  | number | 问题标题  |  |
 | userOpenID  | string | 用户openID  |  |
 
+表名：users
+
+|  字段名   | 字段类型  | 描述 | 备注 |
+|  ----  | ----  | ---  | ---  |
+| _id  | string | 唯一标识符 | 自动生成 |
+| avatarUrl  | string | 用户图像链接  | 微信返回字段 |
+| gender  | number | 性别标识  | 微信返回字段 |
+| created  | date | 用户昵称  |  |
+| nickName  | string | 问题优先级  | 暂不支持修改 |
+| openID  | string | openID值  |  |
+
 
 ## 特别感谢（Special Thanks)
 本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)，特别感谢，

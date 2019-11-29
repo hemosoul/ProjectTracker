@@ -76,6 +76,7 @@ Page({
   },
 
   onShow: function() {
+    console.log(wx.getLaunchOptionsSync())
     var me = this
     var bugID = this.options.bugID
     me.setData({
