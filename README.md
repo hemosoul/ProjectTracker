@@ -15,7 +15,7 @@
 请将环境IDg设置成你自己的。
 
 ## 特别感谢（Special Thanks)
-本项目引用了UUID的生成库，特别感谢，
+本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)，特别感谢，
 
 ## 项目许可 (License)
 
