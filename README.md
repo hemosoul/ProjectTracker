@@ -14,6 +14,22 @@
 -注意事项：-
 请将环境IDg设置成你自己的。
 
+## 后台表结构(Database Structure)
+表名：bugs
+
+|  字段名   | 字段类型  | 描述 | 备注 |
+|  ----  | ----  | ---  |
+| _id  | string | 唯一标识符 | 自动生成 |
+| title  | string | 问题标题  |  |
+| detail  | string | 问题描述  |  |
+| appendContent  | string | 问题补充说明  |  |
+| created  | date | 创建事件  |  |
+| prior  | string | 问题优先级  |  |
+| projectID  | string | 对应项目ID  |  |
+| status  | number | 问题标题  |  |
+| userOpenID  | string | 用户openID  |  |
+
+
 ## 特别感谢（Special Thanks)
 本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)，特别感谢，
 
