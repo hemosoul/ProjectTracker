@@ -1,10 +1,13 @@
 <view class="page">
   <view class="page__bd">
-    <view wx:for="{{statsData}}" wx:key="key" class="statsCell">
-
+  <navigator 
+    wx:for="{{statsData}}" 
+    wx:key="key"
+    url="/pages/bugs/listByStatus/listByStatus?status={{item._id}}" 
+  >
+    <view class="statsCell">
       <view class="statsCellTitle">
-
-        <view wx:if="{{item._id === 2}}" slot="icon">🎯待更进问题数</view>
+        <view wx:if="{{item._id === 2}}" slot="icon">🎯待更进问题数 </view>
         <view wx:elif="{{item._id === 3}}" slot="icon">👌已处理问题数</view>
         <view wx:elif="{{item._id === 4}}" slot="icon">👍已关闭问题数</view>
         <view wx:elif="{{item._id === 5}}" slot="icon">📙已延期问题数</view>
@@ -14,15 +17,11 @@
          {{item.count}}
         </view>
         <view class="statsCellNumberUnit">个</view>
-        <view style="clear:both;"></view>
-     
-     
+        <view style="clear:both;"></view> 
       </view>
       <view style="clear:both;"></view>
      
-
-
-
     </view>
+  </navigator>
   </view>
 </view>

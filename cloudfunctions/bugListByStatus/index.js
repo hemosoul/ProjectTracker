@@ -16,22 +16,22 @@ exports.main = async (event, context) => {
   const _ = db.command
   result = await db.collection('bugs').where({
     'projectID': event.projectID,
-    'status': _.nin([0, 1,4])
+    'status': event.status
   }).
-  orderBy('created', 'desc').
-  get()
-  
-  if (result.errMsg ==="collection.get:ok"){
-    status=true
+    orderBy('created', 'desc').
+    get()
+
+  if (result.errMsg === "collection.get:ok") {
+    status = true
   } else {
-    errMsg="查询出错！"
+    errMsg = "查询出错！"
   }
 
   return {
     'status': status,
     'errMsg': errMsg,
     'result': result,
-    'debug':event.projectID
+    'debug': event.projectID
   }
- 
+
 }

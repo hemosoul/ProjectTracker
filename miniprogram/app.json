@@ -12,7 +12,8 @@
     "pages/bugs/addImg/addImg",
     "pages/bugs/mybugs/mybugs",
     "pages/bugs/updateAppendContent/updateAppendContent",
-    "pages/bugs/followerBugList/followerBugList"
+    "pages/bugs/followerBugList/followerBugList",
+    "pages/bugs/listByStatus/listByStatus"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
