@@ -34,7 +34,7 @@
 
       <view slot="button">
         <button class="weui-btn" type="primary" bindtap="addBugAction">保存并提交</button>
-        <button class="weui-btn" type="default" bindtap="addBugDraftAction">保存草稿</button>
+        <!-- <button class="weui-btn" type="default" bindtap="addBugDraftAction">保存草稿</button> -->
       </view>
     </mp-form-page>
 
