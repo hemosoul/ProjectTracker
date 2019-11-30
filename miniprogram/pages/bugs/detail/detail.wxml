@@ -92,28 +92,34 @@
     <view wx:if="{{bugDetail.userOpenID===currentUser.openID}}">
      
       <button class="weui-btn" type="default"  bindtap="showActionSheet">发起人菜单</button>
-      <button class="weui-btn" type="default"  bindtap="showFollowerActionSheet" wx:if="{{currentUserIsFollower}}">跟进人菜单</button>
+     
       <mp-actionsheet 
         bindactiontap="actionSheetClick" 
         show="{{showActionsheet}}" 
         actions="{{actionSheetList}}" 
         title="发起人菜单">
       </mp-actionsheet>
-      <mp-actionsheet 
+      
+     
+
+    </view>
+    <view wx:if="{{currentUserIsFollower}}">
+     <button class="weui-btn" type="default"  bindtap="showFollowerActionSheet" >跟进人菜单</button>
+     <mp-actionsheet 
         bindactiontap="actionSheetFolloweClick" 
         show="{{showFollowerActionSheet}}" 
         actions="{{actionSheetFollowerList}}" 
         title="跟进人菜单">
       </mp-actionsheet>
 
-      <mp-actionsheet 
+      
+    </view>
+    <mp-actionsheet 
         bindactiontap="actionSheetStatusClick" 
         show="{{statusActionSheet}}" 
         actions="{{actionSheetstatusList}}" 
         title="选定状态">
-      </mp-actionsheet>
-
-    </view>
+     </mp-actionsheet>
 
 
   </view>
