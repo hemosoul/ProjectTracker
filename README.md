@@ -36,9 +36,20 @@
 | _id  | string | 唯一标识符 | 自动生成 |
 | avatarUrl  | string | 用户图像链接  | 微信返回字段 |
 | gender  | number | 性别标识  | 微信返回字段 |
-| created  | date | 用户昵称  |  |
+| created  | date | 创建事件  |  |
 | nickName  | string | 问题优先级  | 暂不支持修改 |
 | openID  | string | openID值  |  |
+
+表名：projects
+
+|  字段名   | 字段类型  | 描述 | 备注 |
+|  ----  | ----  | ---  | ---  |
+| _id  | string | 唯一标识符 | 自动生成 |
+| projectName  | string | 项目名称  |  |
+| introduction  | string | 项目简介  |  |
+| isPublic  | boolean | 项目是否公开  | 公开的项目，所有用户都可以访问。非公开项目，用户访问需要申请。 |
+| creatorOpenID  | string | 创建者OpenID  |  |
+| created  | date | 创建日期  |  |
 
 
 ## 特别感谢（Special Thanks)
