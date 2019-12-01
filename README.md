@@ -11,7 +11,7 @@
 ## 使用（Tutorial)
 请将本项目下载至本地，然后使用微信开发者工具打开项目目录
 
-*注意事项*：
+**注意事项：**
 - 请将环境ID设置成你自己的。
 - 项目列表目前是由后台添加。
 
@@ -52,6 +52,17 @@
 | creatorOpenID  | string | 创建者OpenID  |  |
 | created  | date | 创建日期  |  |
 
+表名：projectUsers
+
+|  字段名   | 字段类型  | 描述 | 备注 |
+|  ----  | ----  | ---  | ---  |
+| _id  | string | 唯一标识符 | 自动生成 |
+| projectID  | string | 项目ID  |  |
+| userOpenID  | string | 用户openID  |  |
+| approved  | boolean | 审批状态  | 对于非公开项目，需要审批才能查看。 |
+| approverOpenID  | string | 审批人OpenID  |  |
+| approvedTime  | date | 审批事件  |  |
+| applyTime  | date | 申请事件  |  |
 
 ## 特别感谢（Special Thanks)
 本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)，特别感谢，
