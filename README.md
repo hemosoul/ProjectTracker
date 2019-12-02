@@ -13,7 +13,9 @@
 
 **注意事项：**
 - 请将环境ID设置成你自己的。
+- 后天数据库需要自己手工创建。
 - 项目列表目前是由后台添加。
+
 
 ## 后台表结构(Database Structure)
 表名：bugs
@@ -63,6 +65,16 @@
 | approverOpenID  | string | 审批人OpenID  |  |
 | approvedTime  | date | 审批事件  |  |
 | applyTime  | date | 申请事件  |  |
+
+表名：comments
+
+|  字段名   | 字段类型  | 描述 | 备注 |
+|  ----  | ----  | ---  | ---  |
+| _id  | string | 唯一标识符 | 自动生成 |
+| bugID  | string | 问题编号  |  |
+| content  | string | 留言内容  |  |
+| created  | date | 创建时间  |  |
+| userOpenID  | string | 留言人OpenID  |  |
 
 ## 特别感谢（Special Thanks)
 本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)，特别感谢，
