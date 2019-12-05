@@ -13,12 +13,12 @@
 
 **注意事项：**
 - 请将环境ID设置成你自己的。
-- 后天数据库需要自己手工创建。
-- 项目列表目前是由后台添加。
+- 后台数据库需要自己手工创建。
+- 项目列表目前是由后台数据库添加。
 
 
 ## 后台表结构(Database Structure)
-表名：bugs
+表名：bugs（问题）
 
 |  字段名   | 字段类型  | 描述 | 备注 |
 |  ----  | ----  | ---  | ---  |
@@ -32,7 +32,7 @@
 | status  | number | 问题标题  |  |
 | userOpenID  | string | 用户openID  |  |
 
-表名：users
+表名：users（用户）
 
 |  字段名   | 字段类型  | 描述 | 备注 |
 |  ----  | ----  | ---  | ---  |
@@ -43,7 +43,7 @@
 | nickName  | string | 问题优先级  | 暂不支持修改 |
 | openID  | string | openID值  |  |
 
-表名：projects
+表名：projects（项目）
 
 |  字段名   | 字段类型  | 描述 | 备注 |
 |  ----  | ----  | ---  | ---  |
@@ -54,7 +54,7 @@
 | creatorOpenID  | string | 创建者OpenID  |  |
 | created  | date | 创建日期  |  |
 
-表名：projectUsers
+表名：projectUsers（项目用户）
 
 |  字段名   | 字段类型  | 描述 | 备注 |
 |  ----  | ----  | ---  | ---  |
@@ -66,7 +66,7 @@
 | approvedTime  | date | 审批事件  |  |
 | applyTime  | date | 申请事件  |  |
 
-表名：comments
+表名：comments（评论）
 
 |  字段名   | 字段类型  | 描述 | 备注 |
 |  ----  | ----  | ---  | ---  |
@@ -75,6 +75,16 @@
 | content  | string | 留言内容  |  |
 | created  | date | 创建时间  |  |
 | userOpenID  | string | 留言人OpenID  |  |
+
+表名：followers（更进人）
+
+|  字段名   | 字段类型  | 描述 | 备注 |
+|  ----  | ----  | ---  | ---  |
+| _id  | string | 唯一标识符 | 自动生成 |
+| bugID  | string | 问题编号  |  |
+| projectID  | string | 项目编号  |  |
+| created  | date | 跟进时间  |  |
+| userOpenID  | string | 跟进人编号  |  |
 
 ## 特别感谢（Special Thanks)
 本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)，特别感谢，
