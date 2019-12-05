@@ -1,10 +1,11 @@
-// miniprogram/pages/users/home/home.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    currentUser:{}
 
   },
 
@@ -19,13 +20,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log(app)
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      'currentUser': app.globalData.currentUser
+    })
+
 
   },
 

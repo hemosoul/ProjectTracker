@@ -1,1 +1,47 @@
-<view>该页面正在建设中，暂未开放！</view>
+<view class="page">
+  <view class="page__bd page__bd_spacing">
+    <view class="userAvatar">
+      <image src="{{currentUser.avatarUrl}}">
+
+      </image>
+
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="nickNameText">{{currentUser.nickName}}</view>
+      </view>
+    </view>
+
+    <mp-cells ext-class="my-cells" title="用户操作列表">
+      <mp-cell 
+        link 
+        url="" 
+        value="修改昵称" >
+        <mp-icon 
+          style="margin-right:6px;vertical-align: middle;"
+          icon="me" 
+          slot="icon" 
+          color="green" 
+          size="30">
+        </mp-icon>
+      </mp-cell>
+    </mp-cells>
+
+    <mp-cells ext-class="my-cells" title="项目操作列表">
+      <mp-cell 
+        link 
+        url="" 
+        value="项目成员" >
+         <mp-icon 
+          style="margin-right:6px;vertical-align: middle;"
+          icon="note" 
+          slot="icon" 
+          color="green" 
+          size="30">
+        </mp-icon>
+      </mp-cell>
+    </mp-cells>
+   
+
+  </view>
+</view>

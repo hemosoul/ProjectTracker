@@ -47,6 +47,12 @@
         "text": "统计",
         "iconPath": "images/icons/headphones.png",
         "selectedIconPath": "images/icons/headphones-color.png"
+      },
+      {
+        "pagePath": "pages/users/home/home",
+        "text": "我",
+        "iconPath": "images/icons/two-cogwheels-settings-interface-symbol.png",
+        "selectedIconPath": "images/icons/two-cogwheels-settings-interface-symbol-color.png"
       }
     ]
   },
