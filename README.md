@@ -76,7 +76,7 @@
 | created  | date | 创建时间  |  |
 | userOpenID  | string | 留言人OpenID  |  |
 
-表名：followers（更进人）
+表名：followers（跟进人）
 
 |  字段名   | 字段类型  | 描述 | 备注 |
 |  ----  | ----  | ---  | ---  |
