@@ -1,0 +1,35 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}">
+</mp-toptips>
+
+<view class="page">
+  <view class="page__bd">
+    <mp-form-page 
+      title="修改用户昵称" 
+      subtitle="修改你的昵称，方便他人识别！😁。">
+      <mp-form id="nicknameAddForm" rules="{{rules}}" models="{{currentUser}}">
+
+         <mp-cells ext-class="my-cells">
+
+            <mp-cell 
+              prop="nickName" 
+              title="用户昵称" 
+              ext-class="">
+                <input
+                  value="{{currentUser.nickName}}" 
+                  bindinput="bindNickNameInputChange" 
+                  data-field="nickName" 
+                  class="weui-input" 
+                  placeholder="输入昵称" />
+            </mp-cell>
+          </mp-cells>
+
+      </mp-form>
+      <view slot="button">
+        <button class="weui-btn" type="primary" bindtap="saveEditNameAction">保存</button>
+      </view>
+    </mp-form-page>
+
+
+
+  </view>
+</view>

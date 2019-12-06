@@ -15,7 +15,7 @@
     <mp-cells ext-class="my-cells" title="用户操作列表">
       <mp-cell 
         link 
-        url="" 
+        url="/pages/users/editName/editName" 
         value="修改昵称" >
         <mp-icon 
           style="margin-right:6px;vertical-align: middle;"

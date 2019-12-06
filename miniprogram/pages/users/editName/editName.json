@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "mp-icon": "../../components/icon/icon",
+    "mp-toptips": "../components/toptips/toptips",
+    "mp-cells": "../components/cells/cells",
+    "mp-cell": "../components/cell/cell",
+    "mp-form-page": "../../components/form-page/form-page",
+    "mp-form": "../../components/form/form"
+  },
+  "navigationBarTitleText": "昵称修改"
+}
