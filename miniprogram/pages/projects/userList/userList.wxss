@@ -1,0 +1,7 @@
+@import '../../../style/common.wxss';
+.avatarIcon{
+  width: 60rpx;
+  height:60rpx;
+  border-radius: 30rpx;
+  margin-right: 1em;
+}

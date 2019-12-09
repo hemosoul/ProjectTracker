@@ -30,7 +30,7 @@
     <mp-cells ext-class="my-cells" title="项目操作列表">
       <mp-cell 
         link 
-        url="" 
+        url="/pages/projects/userList/userList" 
         value="项目成员" >
          <mp-icon 
           style="margin-right:6px;vertical-align: middle;"

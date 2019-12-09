@@ -14,7 +14,8 @@
     "pages/bugs/updateAppendContent/updateAppendContent",
     "pages/bugs/followerBugList/followerBugList",
     "pages/bugs/listByStatus/listByStatus",
-    "pages/users/editName/editName"
+    "pages/users/editName/editName",
+    "pages/projects/userList/userList"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

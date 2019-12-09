@@ -1,0 +1,20 @@
+<view class="page">
+
+
+  <mp-cells ext-class="my-cells" title="项目用户列表">
+    <mp-cell 
+      link 
+      url=""
+      value="{{item.userInfo[0].nickName}}"
+      wx:for="{{projectUserList}}"
+      wx:key="key"
+    >
+    <image
+      class="avatarIcon" 
+      slot="icon" 
+      src="{{item.userInfo[0].avatarUrl}}"
+    >
+    </image>
+    </mp-cell>
+  </mp-cells>
+</view>
