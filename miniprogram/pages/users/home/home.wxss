@@ -22,3 +22,6 @@
   font-size:30rpx;
   font-weight: bold;
 }
+.backToProjectListBtn{
+  margin-top:20rpx;
+}

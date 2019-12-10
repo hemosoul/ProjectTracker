@@ -41,6 +41,13 @@
         </mp-icon>
       </mp-cell>
     </mp-cells>
+
+    <button 
+      class="weui-btn backToProjectListBtn " 
+      type="primary" 
+      bindtap="backToProjectList" >
+      重选项目
+    </button>
    
 
   </view>

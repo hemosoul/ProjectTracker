@@ -1,42 +1,30 @@
 var app = getApp()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     currentUser:{}
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
     console.log(app)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
     this.setData({
       'currentUser': app.globalData.currentUser
     })
 
-
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+  backToProjectList:function(){
+    wx.redirectTo({
+      url: '/pages/projects/list/list',
+    })
+  },
   onHide: function () {
 
   },
