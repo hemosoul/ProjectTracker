@@ -4,7 +4,7 @@
 
     <mp-cells title="问题跟踪列表" footer="点击查看可查看详情！">
     <view wx:for="{{bugList}}" wx:key="key">
-      <mp-cell link url="/pages/bugs/detail/detail?bugID={{item._id}}"  value="{{item.title}}({{item.prior}})" footer="查看"   >
+      <mp-cell link url="/pages/bugs/detail/detail?bugID={{item._id}}"  value="{{item.title}}({{item.prior}})" footer=""   >
         <view wx:if="{{item.status === 2}}" slot="icon">🎯</view>
         <view wx:elif="{{item.status === 3}}" slot="icon">👌</view>
         <view wx:elif="{{item.status === 4}}" slot="icon">👍</view>
