@@ -87,7 +87,10 @@
 | userOpenID  | string | 跟进人编号  |  |
 
 ## 特别感谢（Special Thanks)
-本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)，特别感谢，
+- 本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)。
+- 本项目使用的时Freepic的Supraicons Icon Pack图标设计(https://www.flaticon.com/packs/supraicons)
+
+特别感谢。
 
 ## 项目许可 (License)
 
