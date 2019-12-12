@@ -7,12 +7,43 @@
       <mp-cell 
           link 
           url="/pages/bugs/detail/detail?bugID={{item.bugID}}"  
-          value="{{item.bugInfo[0].title}}({{item.bugInfo[0].prior}})" 
-          footer="查看"   >
-        <view wx:if="{{item.bugInfo[0].status === 2}}" slot="icon">🎯</view>
-        <view wx:elif="{{item.bugInfo[0].status === 3}}" slot="icon">👌</view>
-        <view wx:elif="{{item.bugInfo[0].status === 4}}" slot="icon">👍</view>
-        <view wx:elif="{{item.bugInfo[0].status === 5}}" slot="icon">📙</view>
+          value="{{item.bugInfo[0].title}}" 
+          footer="{{item.bugInfo[0].prior}}"    >
+        <mp-icon 
+          style="margin-right:3px;vertical-align: middle;"
+          icon="time" 
+          color="green" 
+          size="30"
+          slot="icon"
+          wx:if="{{item.bugInfo[0].status === 2}}"
+      >
+      </mp-icon>
+      <mp-icon 
+          style="margin-right:3px;vertical-align: middle;"
+          icon="at" 
+          color="green" 
+          size="30"
+          slot="icon"
+          wx:if="{{item.bugInfo[0].status === 3}}"
+      >
+      </mp-icon>、<mp-icon 
+          style="margin-right:3px;vertical-align: middle;"
+          icon="done" 
+          color="green" 
+          size="30"
+          slot="icon"
+          wx:if="{{item.bugInfo[0].status === 4}}"
+      >
+      </mp-icon>
+      <mp-icon 
+          style="margin-right:3px;vertical-align: middle;"
+          icon="pencil" 
+          color="green" 
+          size="30"
+          slot="icon"
+          wx:if="{{item.bugInfo[0].status === 5}}"
+      >
+      </mp-icon>
       </mp-cell>
     
     

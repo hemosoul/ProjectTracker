@@ -2,8 +2,23 @@
   <view class="page__bd">
 
       <mp-cells ext-class="my-cells" title="项目列表" >
-        <mp-cell link url="/pages/projects/home/home?projectID={{item._id}}" value="{{item.projectName}}" footer="进入" wx:for="{{projectList}}" wx:key="key">
-          <view  slot="icon">🚀</view>
+        <mp-cell 
+          link 
+          url="/pages/projects/home/home?projectID={{item._id}}" 
+          value="{{item.projectName}}" 
+          wx:for="{{projectList}}" 
+          wx:key="key"
+          
+        >
+        <mp-icon 
+          style="margin-right:6px;vertical-align: middle;"
+          icon="tag" 
+          color="green" 
+          size="30"
+          slot="icon"
+        >
+        </mp-icon>
+
         </mp-cell>
       </mp-cells>
   </view>
