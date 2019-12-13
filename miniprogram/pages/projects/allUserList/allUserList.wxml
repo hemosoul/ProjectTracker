@@ -1,0 +1,39 @@
+<view class="page">
+
+
+  <mp-cells ext-class="my-cells" title="项目用户列表">
+  <mp-slideview 
+    buttons="{{slideButtons}}" 
+    wx:for="{{projectUserList}}"
+    wx:key="key"
+    >
+    <mp-cell 
+      url=""
+      value="{{item.userInfo[0].nickName}}"
+    >
+    <image
+      class="avatarIcon" 
+      slot="icon" 
+      src="{{item.userInfo[0].avatarUrl}}"
+    >
+    </image>
+        <mp-icon 
+          wx:if="{{item.approved}}"
+          style="margin-right:6px;vertical-align: middle;"
+          icon="done" 
+          slot="footer" 
+          color="green" 
+          size="30">
+        </mp-icon>
+        <mp-icon 
+           wx:if="{{item.approved===false}}"
+          style="margin-right:6px;vertical-align: middle;"
+          icon="volume-off" 
+          slot="footer" 
+          color="red" 
+          size="30">
+        </mp-icon>
+    </mp-cell>
+    </mp-slideview>
+  </mp-cells>
+</view>

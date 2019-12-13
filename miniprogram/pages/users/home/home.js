@@ -1,8 +1,13 @@
 var app = getApp()
+const collect = require('../../../utils/collect.js')
 Page({
 
   data: {
-    currentUser:{}
+    currentUser:{
+
+    },
+    currentProjectRoles:[],
+    currentUserIsProjectAdmin:false
 
   },
 
@@ -15,9 +20,25 @@ Page({
   },
 
   onShow: function () {
-    this.setData({
+    var me =this 
+    me.setData({
       'currentUser': app.globalData.currentUser
     })
+
+    // 引用外部库
+    console.log(app)
+    var currentProjectRoles = new collect(app.globalData.currentProjectUserRoles)
+    me.setData({
+      'currentProjectRoles': currentProjectRoles
+    })
+    var isProjectAdmin = currentProjectRoles.find({ role: '项目管理员' })
+    if (isProjectAdmin === undefined) {
+
+    } else {
+      me.setData({
+        'currentUserIsProjectAdmin': true
+      })
+    }
 
   },
   backToProjectList:function(){

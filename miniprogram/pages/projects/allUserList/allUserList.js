@@ -2,11 +2,27 @@ var app = getApp()
 Page({
 
   data: {
-    projectUserList:[]
+    projectUserList: [],
+    slideButtons: [
+      {
+        text: '通过',
+        src: '', 
+      }, {
+        text: '拒绝',
+        extClass: 'test',
+        src: '', 
+      }, {
+        type: 'warn',
+        text: '警示',
+        extClass: 'test',
+        src: '', 
+      }
 
+    ]
   },
 
   onLoad: function (options) {
+
 
   },
 
@@ -15,10 +31,10 @@ Page({
   },
 
   onShow: function () {
-    var me=this
+    var me = this
     console.log(app)
     wx.cloud.callFunction({
-      name: 'projectUserList',
+      name: 'projectAllUserList',
       data: {
         projectID: app.globalData.currentProject._id
       },

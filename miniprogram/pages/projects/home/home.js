@@ -73,6 +73,22 @@ Page({
 
     })
 
+    //获取当前角色在该项目的橘色列表
+    wx.cloud.callFunction({
+      name: 'projectUserRoleList',
+      data: {
+        projectID: options.projectID
+      },
+      success: function (res) {
+        if (res.result.status === true) {
+          app.globalData.currentProjectUserRoles = res.result.projectUserRoles;
+          console.log(app)
+        }
+
+      }
+
+
+    })
    
 
 

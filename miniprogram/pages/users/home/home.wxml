@@ -25,13 +25,10 @@
           size="30">
         </mp-icon>
       </mp-cell>
-    </mp-cells>
-
-    <mp-cells ext-class="my-cells" title="项目操作列表">
       <mp-cell 
         link 
         url="/pages/projects/userList/userList" 
-        value="项目成员" >
+        value="查看成员" >
          <mp-icon 
           style="margin-right:6px;vertical-align: middle;"
           icon="note" 
@@ -40,6 +37,26 @@
           size="30">
         </mp-icon>
       </mp-cell>
+    </mp-cells>
+
+    <mp-cells 
+    ext-class="my-cells" 
+    title="项目操作列表（管理员可见)" 
+    wx:if="{{currentUserIsProjectAdmin}}"
+    >
+       <mp-cell 
+        link 
+        url="/pages/projects/allUserList/allUserList" 
+        value="成员管理" >
+         <mp-icon 
+          style="margin-right:6px;vertical-align: middle;"
+          icon="contacts" 
+          slot="icon" 
+          color="green" 
+          size="30">
+        </mp-icon>
+        </mp-cell>
+      
     </mp-cells>
 
     <button 

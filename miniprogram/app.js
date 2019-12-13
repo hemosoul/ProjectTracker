@@ -2,6 +2,7 @@ App({
   globalData: {
     currentUser: {},
     currentUserRoles:[],
+    currentProjectUserRoles:[],
     currentProject:[]
   },
   onLaunch: function () {

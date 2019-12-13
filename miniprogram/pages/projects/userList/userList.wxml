@@ -3,7 +3,6 @@
 
   <mp-cells ext-class="my-cells" title="项目用户列表">
     <mp-cell 
-      link 
       url=""
       value="{{item.userInfo[0].nickName}}"
       wx:for="{{projectUserList}}"

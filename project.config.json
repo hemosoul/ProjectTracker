@@ -11,7 +11,7 @@
 	},
 	"appid": "wx14ec606012a5a84b",
 	"projectname": "ProjectTracker",
-	"libVersion": "2.9.2",
+	"libVersion": "2.9.4",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
