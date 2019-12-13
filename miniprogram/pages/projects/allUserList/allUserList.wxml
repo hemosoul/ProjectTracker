@@ -1,14 +1,14 @@
+<mp-toptips 
+  msg="{{res.errMsg}}" 
+  type="{{res.status?'info':'error'}}"
+  show="{{res.status}}">
+</mp-toptips>
 <view class="page">
-
-
-  <mp-cells ext-class="my-cells" title="项目用户列表">
-  <mp-slideview 
-    buttons="{{slideButtons}}" 
-    wx:for="{{projectUserList}}"
-    wx:key="key"
-    >
+  <mp-cells ext-class="my-cells" title="项目用户申请列表">
     <mp-cell 
       url=""
+      wx:for="{{projectUserList}}"
+      wx:key="key"
       value="{{item.userInfo[0].nickName}}"
     >
     <image
@@ -17,23 +17,12 @@
       src="{{item.userInfo[0].avatarUrl}}"
     >
     </image>
-        <mp-icon 
-          wx:if="{{item.approved}}"
-          style="margin-right:6px;vertical-align: middle;"
-          icon="done" 
-          slot="footer" 
-          color="green" 
-          size="30">
-        </mp-icon>
-        <mp-icon 
-           wx:if="{{item.approved===false}}"
-          style="margin-right:6px;vertical-align: middle;"
-          icon="volume-off" 
-          slot="footer" 
-          color="red" 
-          size="30">
-        </mp-icon>
+    <switch 
+      slot="footer"
+      data-useropenid="{{item.userOpenID}}"  
+      checked="{{item.approved}}" 
+      bindchange="projectUserApproveSwitchAction"/>
     </mp-cell>
-    </mp-slideview>
+
   </mp-cells>
 </view>

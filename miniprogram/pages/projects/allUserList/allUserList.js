@@ -1,24 +1,8 @@
 var app = getApp()
 Page({
-
   data: {
     projectUserList: [],
-    slideButtons: [
-      {
-        text: '通过',
-        src: '', 
-      }, {
-        text: '拒绝',
-        extClass: 'test',
-        src: '', 
-      }, {
-        type: 'warn',
-        text: '警示',
-        extClass: 'test',
-        src: '', 
-      }
-
-    ]
+    res:{}
   },
 
   onLoad: function (options) {
@@ -53,10 +37,32 @@ Page({
 
     })
   },
+  projectUserApproveSwitchAction:function(e){
+    var me=this
+    var approved=e.detail.value
+    var userOpenID=e.target.dataset.useropenid
+    console.log(e)
+    wx.cloud.callFunction({
+      name: 'projectUserApproveSwitch',
+      data: {
+        'approved': approved,
+        'projectID': app.globalData.currentProject._id,
+        'userOpenID': userOpenID
+      },
+      success: function (res) {
+        me.setData({
+          'res': res.result
+        })
+        if (res.result.status === true) {
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+        } else {
+         
+          me.onShow()
+          
+        }
+      }
+    })
+  },
   onHide: function () {
 
   },
