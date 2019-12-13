@@ -89,7 +89,7 @@
 ## 特别感谢（Special Thanks)
 - 本项目引用了[UUID的生成库](https://github.com/tangqipeng/uuid-js)。
 - 本项目使用的是Freepic的[Supraicons Icon Pack图标设计](https://www.flaticon.com/packs/supraicons)
-
+- 本项目使用了[matthewmueller的数组库](https://github.com/matthewmueller/array)
 特别感谢。
 
 ## 项目许可 (License)
