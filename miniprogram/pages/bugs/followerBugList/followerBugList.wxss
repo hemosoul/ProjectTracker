@@ -1,1 +1,6 @@
 @import '../../../style/common.wxss';
+.listItem .weui-cell__bd{
+  white-space:nowrap; 
+  text-overflow:ellipsis;
+  overflow:hidden;
+}

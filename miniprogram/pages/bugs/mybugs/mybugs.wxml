@@ -6,6 +6,7 @@
     <view wx:for="{{bugList}}" wx:key="key">
       <mp-cell 
         link 
+        ext-class="listItem"
         url="/pages/bugs/detail/detail?bugID={{item._id}}"  
         value="{{item.title}}" 
         footer="{{item.prior}}"  

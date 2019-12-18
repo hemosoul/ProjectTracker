@@ -5,6 +5,7 @@
     <mp-cells title="我提交的问题明细" footer="点击查看可查看详情！">
     <view wx:for="{{bugList}}" wx:key="key">
       <mp-cell 
+          ext-class="listItem"
           link 
           url="/pages/bugs/detail/detail?bugID={{item.bugID}}"  
           value="{{item.bugInfo[0].title}}" 
