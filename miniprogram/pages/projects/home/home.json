@@ -2,5 +2,6 @@
   "usingComponents": {
     "mp-msg": "../components/msg/msg"
   },
+  "enablePullDownRefresh":true,
   "navigationBarTitleText": "项目首页"
 } 

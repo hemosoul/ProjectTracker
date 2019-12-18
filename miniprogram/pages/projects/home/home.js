@@ -10,96 +10,8 @@ Page({
   },
 
   onLoad: function(options) {
-    var me = this
-    me.setData({
-      projectID: options.projectID
-    })
-    //获取项目详细信息
-    wx.cloud.callFunction({
-      name: 'projectDetail',
-      data: {
-        projectID: options.projectID
-      },
-      success: function(res) {
-        if (res.result.status === true) {
-          app.globalData.currentProject = res.result.projectDetail;
-          me.setData({
-            projectDetail: res.result.projectDetail
-          })
-          wx.setNavigationBarTitle({
-            title: "【" + res.result.projectDetail.projectName + "】首页"
-          })
-          console.log(app.globalData);
-          //更具项目详细信息检查当前用户访问权限
-
-          wx.cloud.callFunction({
-            name: 'projectUserCheck',
-            data: {
-              'projectID': res.result.projectDetail._id,
-              'userOpenID': app.globalData.currentUser.openID
-            },
-            success: function (res) {
-              me.setData({
-                currentUserCheck: res.result
-              })
-            }
-          })
-
-        }
-
-      }
-
-
-    })
-
-    //获取项目成员列表
-    wx.cloud.callFunction({
-      name: 'projectUserList',
-      data: {
-        projectID: options.projectID
-      },
-      success: function(res) {
-        console.log(res)
-        if (res.result.status) {
-          me.setData({
-            projectUserList: res.result.projectUserList
-          })
-
-        } else {
-          console.log(res.result.errMsg)
-        }
-
-      }
-
-    })
-
-    //获取当前角色在该项目的橘色列表
-    wx.cloud.callFunction({
-      name: 'projectUserRoleList',
-      data: {
-        projectID: options.projectID
-      },
-      success: function (res) {
-        if (res.result.status === true) {
-          app.globalData.currentProjectUserRoles = res.result.projectUserRoles;
-          console.log(app)
-        }
-
-      }
-
-
-    })
-   
-
-
-
-
-
-
-
+  
   },
-
-
 
   projectUserApplyInAction: function(){
     var me =this
@@ -140,8 +52,6 @@ Page({
     })
   },
 
-
-
   enterProjectHome:function(){
     wx.switchTab({
       url: '/pages/projects/main/main'
@@ -152,44 +62,109 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function() {
+    var me = this
+    me.setData({
+      projectID: me.options.projectID
+    })
+    //获取项目详细信息
+    wx.cloud.callFunction({
+      name: 'projectDetail',
+      data: {
+        projectID: me.options.projectID
+      },
+      success: function (res) {
+        if (res.result.status === true) {
+          app.globalData.currentProject = res.result.projectDetail;
+          me.setData({
+            projectDetail: res.result.projectDetail
+          })
+          wx.setNavigationBarTitle({
+            title: "【" + res.result.projectDetail.projectName + "】首页"
+          })
+          console.log(app.globalData);
+          //更具项目详细信息检查当前用户访问权限
 
+          wx.cloud.callFunction({
+            name: 'projectUserCheck',
+            data: {
+              'projectID': res.result.projectDetail._id,
+              'userOpenID': app.globalData.currentUser.openID
+            },
+            success: function (res) {
+              me.setData({
+                currentUserCheck: res.result
+              })
+            }
+          })
+
+        }
+
+      }
+
+
+    })
+
+    //获取项目成员列表
+    wx.cloud.callFunction({
+      name: 'projectUserList',
+      data: {
+        projectID: me.options.projectID
+      },
+      success: function (res) {
+        console.log(res)
+        if (res.result.status) {
+          me.setData({
+            projectUserList: res.result.projectUserList
+          })
+
+        } else {
+          console.log(res.result.errMsg)
+        }
+
+      }
+
+    })
+
+    //获取当前角色在该项目的橘色列表
+    wx.cloud.callFunction({
+      name: 'projectUserRoleList',
+      data: {
+        projectID: me.options.projectID
+      },
+      success: function (res) {
+        if (res.result.status === true) {
+          app.globalData.currentProjectUserRoles = res.result.projectUserRoles;
+          console.log(app)
+        }
+
+      }
+
+
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function() {
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
+
   onUnload: function() {
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function() {
+    var me =this
+    me.onShow()
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+
   onReachBottom: function() {
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
+  
   onShareAppMessage: function() {
 
   }

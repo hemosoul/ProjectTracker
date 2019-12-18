@@ -5,11 +5,12 @@
     <mp-cells title="问题跟踪列表" footer="点击查看可查看详情！">
     <view wx:for="{{bugList}}" wx:key="key">
       <mp-cell 
+        ext-class="listItem"
         link 
         url="/pages/bugs/detail/detail?bugID={{item._id}}"  
         value="{{item.title}}" 
         footer="{{item.prior}}"  
-        ext-class="status" >
+       >
       <mp-icon 
           style="margin-right:3px;vertical-align: middle;"
           icon="time" 
