@@ -63,8 +63,18 @@
 | userOpenID  | string | 用户openID  |  |
 | approved  | boolean | 审批状态  | 对于非公开项目，需要审批才能查看。 |
 | approverOpenID  | string | 审批人OpenID  |  |
-| approvedTime  | date | 审批事件  |  |
-| applyTime  | date | 申请事件  |  |
+| approvedTime  | date | 审批时间  |  |
+| applyTime  | date | 申请时间  |  |
+
+表名：projectUserRoles（项目用户）
+
+|  字段名   | 字段类型  | 描述 | 备注 |
+|  ----  | ----  | ---  | ---  |
+| _id  | string | 唯一标识符 | 自动生成 |
+| projectID  | string | 项目ID  |  |
+| userOpenID  | string | 用户openID  |  |
+| role  | string | 用户角色  |  |
+| created  | date | 创建时间  |  |
 
 表名：comments（评论）
 
