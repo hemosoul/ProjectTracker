@@ -28,7 +28,8 @@
           slot="icon"
           wx:if="{{item.status === 3}}"
       >
-      </mp-icon>、<mp-icon 
+      </mp-icon>
+      <mp-icon 
           style="margin-right:3px;vertical-align: middle;"
           icon="done" 
           color="green" 

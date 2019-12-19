@@ -3,11 +3,48 @@
 
     <mp-cells title="问题列表" footer="点击查看可查看详情！">
     <view wx:for="{{bugList}}" wx:key="key">
-      <mp-cell link url="/pages/bugs/detail/detail?bugID={{item._id}}"  value="{{item.title}}({{item.prior}})" footer="查看"   >
-        <view wx:if="{{item.status === 2}}" slot="icon">🎯</view>
-        <view wx:elif="{{item.status === 3}}" slot="icon">👌</view>
-        <view wx:elif="{{item.status === 4}}" slot="icon">👍</view>
-        <view wx:elif="{{item.status === 5}}" slot="icon">📙</view>
+      <mp-cell
+        ext-class="listItem" 
+        link 
+        url="/pages/bugs/detail/detail?bugID={{item._id}}"  
+        value="{{item.title}}" 
+        footer="{{item.prior}}"   >
+        <mp-icon 
+          style="margin-right:3px;vertical-align: middle;"
+          icon="time" 
+          color="green" 
+          size="30"
+          slot="icon"
+          wx:if="{{item.status === 2}}"
+      >
+      </mp-icon>
+      <mp-icon 
+          style="margin-right:3px;vertical-align: middle;"
+          icon="at" 
+          color="green" 
+          size="30"
+          slot="icon"
+          wx:if="{{item.status === 3}}"
+      >
+      </mp-icon>
+      <mp-icon 
+          style="margin-right:3px;vertical-align: middle;"
+          icon="done" 
+          color="green" 
+          size="30"
+          slot="icon"
+          wx:if="{{item.status === 4}}"
+      >
+      </mp-icon>
+      <mp-icon 
+          style="margin-right:3px;vertical-align: middle;"
+          icon="pencil" 
+          color="green" 
+          size="30"
+          slot="icon"
+          wx:if="{{item.status === 5}}"
+      >
+      </mp-icon>
       </mp-cell>
     
     
