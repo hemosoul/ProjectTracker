@@ -66,7 +66,7 @@
 | approvedTime  | date | 审批时间  |  |
 | applyTime  | date | 申请时间  |  |
 
-表名：projectUserRoles（项目用户）
+表名：projectUserRoles（项目用户角色）
 
 |  字段名   | 字段类型  | 描述 | 备注 |
 |  ----  | ----  | ---  | ---  |
